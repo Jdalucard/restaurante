@@ -1,11 +1,16 @@
+import React from "react";
+import AppRouter from './router/AppRouter'
 
-function App() {
-  return (
-    <div >
-       Hola mundo
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import "./styles/estilos.css";
 
-    </div>
-  );
-}
+const App = () => {
+  return(
+ 
+<AppRouter />
+
+  ) 
+};
 
 export default App;
