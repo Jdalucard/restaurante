@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const FormularioPage = () => {
   return (
-    <div>Fomrulario</div>
-  )
-}
+    <>
+      <h1>formulario page</h1>
+    </>
+  );
+};
+export default FormularioPage;
 
-export default FormularioPage
