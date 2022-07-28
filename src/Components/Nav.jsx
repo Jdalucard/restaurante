@@ -4,57 +4,79 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
+      <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
+        <div className="container-fluid">
+          <div className="Contenedor del logo ">
+            {" "}
+            <img
+              className="logo"
+              src={require("../Img/LogoTwo.png")}
+              alt="logo"
+            />
+          </div>
 
- <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
-  <div className="container-fluid">
-   {/*  <a className="navbar-brand" href="/">Navbar w/ text</a> */}
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon" />
-    </button>
-    <div className="collapse navbar-collapse" id="navbarText">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-      <li className="nav-item">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse" id="navbarText">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
                 <NavLink
                   to="/"
                   aria-current="page"
                   className={({ isActive }) =>
-                    isActive ? "nav-link activo " : "nav-link "
+                    isActive ? "nav-link active " : "nav-link "
                   }
                 >
-                  Home Page
+                  HomePage
                 </NavLink>
               </li>
-      <li className="nav-item">
-              <NavLink to='formulario' className={({isActive})=>(isActive ? 'nav-link activo' : 'nav-link')}>
-              Formulario
-            </NavLink>
-                
+              <li className="nav-item">
+                <NavLink
+                  to="menu"
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active" : "nav-link"
+                  }
+                >
+                Menu
+                </NavLink>
               </li>
-        <li className="nav-item">
+              <li className="nav-item">
                 <NavLink
                   to="reservaciones"
                   aria-current="page"
                   className={({ isActive }) =>
-                    isActive ? " nav-link activo" : 'nav-link'
+                    isActive ? " nav-link active" : "nav-link"
                   }
                 >
                   Reservaciones
                 </NavLink>
               </li>
-        <li className="nav-item">
-              <NavLink to='blog' className={({isActive})=>(isActive ? 'nav-link activo'  : 'nav-link')}>
-             Blog
-            </NavLink>
+              <li className="nav-item">
+                <NavLink
+                  to="blog"
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active" : "nav-link"
+                  }
+                >
+                  Blog
+                </NavLink>
               </li>
-      </ul>
-     {/*  <span className="navbar-text">
-        Navbar text with an inline element
-      </span> */}
-    </div>
-  </div>
-</nav>
-
-
+            </ul>
+            <span className="navbar-text">
+              <h3>Un mundo de Sabores</h3>
+            </span>
+          </div>
+        </div>
+      </nav>
     </>
   );
 };

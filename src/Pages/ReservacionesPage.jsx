@@ -6,16 +6,23 @@ import { useState } from 'react';
 const ReservacionesPage = () => {
 const [contador, setContador] = useState(0)
 
+
 const contar=()=>{
   setContador (contador +1);
  };
+
+
+ const deCrementar= () => {
+  setContador(contador -1)
+ }
+
 
  const [reservas] = useState([
   {
     id:1,
     nombre: 'Jose ',
     hora :'1:00 pm',
-    fecha:Date,
+    fecha:  Date(),
     correo:'josed3188@gmail.com',
     telefono:'3023315479',
     NPersonas:4
@@ -24,7 +31,7 @@ const contar=()=>{
     id:2 ,
     nombre: 'MARIA ',
     hora :'1:00 pm',
-    fecha:Date,
+    fecha:  Date(),
     correo:'josed3188@gmail.com',
     telefono:'3023315479',
     NPersonas:6
@@ -33,7 +40,7 @@ const contar=()=>{
     id:3 ,
     nombre: 'Hecsil ',
     hora :'1:00 pm',
-    fecha:Date,
+    fecha:  Date(),
     correo:'josed3188@gmail.com',
     telefono:'3023315479',
     NPersonas:6
@@ -64,10 +71,14 @@ const contar=()=>{
 </table>
 
 {/* contador */}
-  <div className='container-fluid'>
+  <div className='container d-flex'>
     <h2>Contar numero de llamadas: {contador} </h2>
-    <button  className= 'btn btn-dark b' onClick={contar}>Cuenta </button>
+    <button  className= 'Boton btn btn-dark  m-2' onClick={contar}>Cuenta </button>
+    <h2>decrementa numero de llamadas: {contador} </h2>
+<button className= ' btn btn-dark b m-2' onClick={deCrementar}>Disminuye</button>
   </div>
+
+ 
 </>
   )
 }

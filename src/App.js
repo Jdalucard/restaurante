@@ -8,7 +8,8 @@ import "./styles/estilos.css";
 const App = () => {
   return(
  
-<AppRouter />
+<AppRouter
+ />
 
   ) 
 };
