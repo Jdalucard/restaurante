@@ -41,7 +41,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  to="menu"
+                  to="Menulista"
                   className={({ isActive }) =>
                     isActive ? "nav-link active" : "nav-link"
                   }
@@ -70,6 +70,8 @@ const Navbar = () => {
                   Blog
                 </NavLink>
               </li>
+              
+
             </ul>
             <span className="navbar-text">
               <h3>Un mundo de Sabores</h3>

@@ -1,14 +1,19 @@
 import React from "react";
 
 const BlogPage = (props) => {
-  console.log(props)
+  
   return (
   <>
+    <header >
+    <h1>Blog</h1>
+    </header>
 
-<h1>Blog</h1>
-{/* <ul>
-    {props.articulos.map((articulo,index)=><li key={index}>{articulo}</li>)}
-</ul> */}
+      <article className='blog-page'>
+    {/*   {props.articulos.map((articulo,index)=><li key={index}>{articulo}</li>)} */}
+
+
+      </article>
+
   </>
   );
 };

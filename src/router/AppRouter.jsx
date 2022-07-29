@@ -8,11 +8,11 @@ import {
 } from "react-router-dom";
 
 import Homepage  from "../Pages/HomePage";
-import MenuPage from "../Pages/MenuPage";
 import ReservacionesPage from "../Pages/ReservacionesPage";
 import Navbar from "../Components/Nav";
 import BlogPage from "../Pages/BlogPage";
 import ReservacionPage from "../Pages/ReservacionPage";
+import  MenuLista  from "../Components/MenuLista";
 
 export const AppRutas = () => {
   return (
@@ -29,22 +29,14 @@ export const AppRutas = () => {
               path="/reservacion/:id_reserva"
               element={<ReservacionPage />}
             />
-          <Route path="/menu" element={<MenuPage
-                
-                nombre='Desayuno Americano'
-                pais='Estados Unidos de America'
-                imagen='camarones'
-                contenido= 'Está compuesto por huevos, ya sean fritos o revueltos, bacon y tortitas americanas. Como bebida, suele optarse por el café o zumos de frutas y en ocasiones, en  complementa con patatas frita'
-
-           
-
-
+          <Route path="/Menulista" element={<MenuLista 
+        
           />} />
           <Route
             path="/blog"
             element={
               <BlogPage
-                    
+              articulos={['articulo1','articulo2','articulo3']}
         
               />
             }
