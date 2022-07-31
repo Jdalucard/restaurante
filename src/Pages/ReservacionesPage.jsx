@@ -1,86 +1,160 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useState } from "react";
+import { db } from "../firebase/Firebase";
+import { collection, addDoc } from "firebase/firestore";
 
+const initalForm = {
+  nombre: "",
+  apellido: "",
+  telefono: "",
+  correo: "",
+  fecha: "",
+  number: "",
+};
 
 const ReservacionesPage = () => {
-const [contador, setContador] = useState(0)
+  const [registro, setregistro] = useState({ initalForm });
 
-
-const contar=()=>{
-  setContador (contador +1);
- };
-
-
- const deCrementar= () => {
-  setContador(contador -1)
- }
-
-
- const [reservas] = useState([
-  {
-    id:1,
-    nombre: 'Jose ',
-    hora :'1:00 pm',
-    fecha:  Date(),
-    correo:'josed3188@gmail.com',
-    telefono:'3023315479',
-    NPersonas:4
-  },
-  {
-    id:2 ,
-    nombre: 'MARIA ',
-    hora :'1:00 pm',
-    fecha:  Date(),
-    correo:'josed3188@gmail.com',
-    telefono:'3023315479',
-    NPersonas:6
-  },
-  {
-    id:3 ,
-    nombre: 'Hecsil ',
-    hora :'1:00 pm',
-    fecha:  Date(),
-    correo:'josed3188@gmail.com',
-    telefono:'3023315479',
-    NPersonas:6
-  }
- ])
+  const crearRegistro = async () => {
+    const coleccion = collection(db, "registros");
+    await addDoc(coleccion, registro);
+  };
 
   return (
     <>
-<table >
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">ver mas</th>
-    </tr>
-  </thead>
-  <tbody>
-  {reservas.map((element)=>
-      <tr>
-      <th scope="row">{element.id}</th>
-      <td>{element.nombre}</td>
-      <td><NavLink to={`/reservacion/${element.id}`}>Tu reservacion</NavLink></td>
-      </tr>
-    )
-  }
+      <header className="header text-center">
+        <h1>Realiza tus reservaciones Aqui </h1>
+      </header>
+      <main>
+        <article>
+          <form>
+            <div className="mb-3 text-start">
+              <strong>
+                <label htmlFor="nombre">Nombre</label>
+              </strong>
+              <input
+                id="nombre"
+                type="text"
+                name="nombre"
+                placeholder="Nombre"
+                autoComplete="off"
+                className="form-control"
+                value={registro.nombre}
+                onChange={(event) => {
+                  setregistro({ ...registro, nombre: event.target.value });
+                }}
+                required
+              ></input>
+            </div>
+            <div className="mb-3 text-start">
+              <strong>
+                {" "}
+                <label htmlFor="apellido">Apellido</label>
+              </strong>
+              <input
+                id="apellido"
+                type="text"
+                name="apellido"
+                placeholder=" Apellido"
+                autoComplete="off"
+                className="form-control"
+                value={registro.apellido}
+                onChange={(event) => {
+                  setregistro({ ...registro, apellido: event.target.value });
+                }}
+                required
+              ></input>
+            </div>
+            <div className="mb-3 text-start">
+              <strong>
+                <label htmlFor="email">Correo</label>
+              </strong>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder=" Correo"
+                autoComplete="off"
+                className="form-control"
+                required
+              ></input>
+            </div>
+            <div className="mb-3 text-start ">
+              <strong>
+                {" "}
+                <label htmlFor="telefono">Teléfono</label>
+              </strong>
+              <input
+                id="telefono"
+                type="tel"
+                name="telefono"
+                placeholder=" Teléfono"
+                autoComplete="off"
+                className="form-control"
+                value={registro.telefono}
+                onChange={(event) => {
+                  setregistro({ ...registro, telefono: event.target.value });
+                }}
+                required
+              ></input>
+            </div>
+            <div className="mb-3 text-start">
+              <strong>
+                <label htmlFor="fecha">Fecha</label>
+              </strong>
+              <input
+                id="fecha"
+                type="date"
+                name="fecha"
+                min="2022-01-01"
+                max="2022-12-31"
+                placeholder=" fecha"
+                autoComplete="off"
+                className="form-control"
+                value={registro.fecha}
+                onChange={(event) => {
+                  setregistro({ ...registro, fecha: event.target.value });
+                }}
+                required
+              ></input>
+            </div>
+            <div className="mb-3 text-start">
+              <strong>
+                <label htmlFor="number">Numero personas a reservar</label>
+              </strong>
+              <input
+                id="number"
+                type="number"
+                name="number"
+                placeholder="Personas a reservar "
+                value={registro.number}
+                onChange={(event) => {
+                  setregistro({ ...registro, fecha: event.target.value });
+                }}
+                autoComplete="off"
+                className="form-control"
+                required
+              ></input>
+            </div>
+          </form>
+        </article>
+      </main>
 
-  </tbody>
-</table>
+      <section>
+        <article>
+          <button type="button" className="btn btn-dark btn-lg ">
+            Obtener registro
+          </button>
+          <button
+            type="button"
+            className="btn btn-success btn-lg ms-5 "
+            onClick={crearRegistro}
+          >
+            Crear registro
+          </button>
+        </article>
+      </section>
+    </>
+  );
+};
 
-{/* contador */}
-  <div className='container d-flex'>
-    <h2>Contar numero de llamadas: {contador} </h2>
-    <button  className= 'Boton btn btn-dark  m-2' onClick={contar}>Cuenta </button>
-    <h2>decrementa numero de llamadas: {contador} </h2>
-<button className= ' btn btn-dark b m-2' onClick={deCrementar}>Disminuye</button>
-  </div>
-
- 
-</>
-  )
-}
-
-export default ReservacionesPage
+export default ReservacionesPage;
