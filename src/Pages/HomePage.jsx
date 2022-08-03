@@ -43,7 +43,7 @@ const Home = () => {
           <div className="containerFormulario ">
             <form className="form-horizontal">
               <h1>Contactanos</h1>
-              <div className="mb-3">
+              <div className="mb-2">
                 <label
                   htmlFor="exampleFormControlInput1"
                   className="form-label"

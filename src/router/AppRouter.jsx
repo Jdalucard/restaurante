@@ -9,7 +9,7 @@ import {
 import Homepage from "../Pages/HomePage";
 import ReservacionesPage from "../Pages/ReservacionesPage";
 import Navbar from "../Components/Nav";
-
+import Misesion from "../Components/Misesion";
 import ReservacionPage from "../Pages/ReservacionPage";
 import MenuLista from "../Components/MenuLista";
 import LoginPage from "../Pages/LoginPage";
@@ -31,6 +31,7 @@ export const AppRutas = () => {
           <Route path="/Menulista" element={<MenuLista />} />
 
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/Misesion" element={<Misesion/>}/>
 
           <Route path="*" element={<Navigate to="/Nofound" />} />
         </Routes>

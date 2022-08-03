@@ -8,25 +8,26 @@ import "./styles/estilos.css";
 /* import Homepage from "./Pages/HomePage"; */
 import LoginPage from "./Pages/LoginPage"
 
-const auth = getAuth(app);
+
+export const auth = getAuth(app);
 
 const App = () => {
  const [usuarioGlobal,setUsuarioGlobal] = useState(null); 
+
  onAuthStateChanged(auth,(usuarioFirebase)=>{
   if(usuarioFirebase){
     //codigo de la sesion Iniciada
-    setUsuarioGlobal(usuarioFirebase)
+   setUsuarioGlobal(usuarioFirebase);
   }else{
     //en caso de que no inicia sesion
     setUsuarioGlobal(null);
   }
- })
+ });
+
   return(
 <>
 
-
-{usuarioGlobal ? <AppRouter/>: <LoginPage/>} 
-
+{usuarioGlobal ? <AppRouter correoUsuario={usuarioGlobal.email}/>: <LoginPage/>} 
 
 
 </>

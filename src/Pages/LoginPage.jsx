@@ -29,7 +29,9 @@ const LoginPage = () => {
     } else {
       //si esta Iniciando seccion
       signInWithEmailAndPassword(auth, correo, contra);
-    }
+    };
+
+
   }
 
   return (

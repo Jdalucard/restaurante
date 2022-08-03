@@ -140,4 +140,9 @@ margin-top: 15px;
     justify-content: center;
     align-items: center
   }
+  .containerFormulario{
+margin-left:-15px;
+padding: 15px;
+align-items: center;
+  }
 }
