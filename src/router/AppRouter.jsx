@@ -19,19 +19,21 @@ export const AppRutas = () => {
     
     <Router>
       <Navbar />
-      <div className="container mt-3">
+      <div className="container-xl mt-3">
         <Routes>
        
             <Route path="/" element={<Homepage  />} />
             <Route path="/reservaciones" element={<ReservacionesPage />} />
    
           <Route
-              path="/reservacion/:id_reserva"
+              path="/reservacion/:idRegistro"
               element={<ReservacionPage />}
             />
+
           <Route path="/Menulista" element={<MenuLista 
         
           />} />
+
           <Route
             path="/blog"
             element={
