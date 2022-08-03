@@ -49,6 +49,7 @@ const LoginPage = () => {
             className="form-control"
             id="formBasicEmail"
             aria-describedby="emailHelp"
+            pattern=".+@[mM][aA][iI][lL][fF][oO][rR][aA][lL][lL][.][cC][oO]"
           />
         </div>
         <div className="mb-3">
@@ -59,6 +60,9 @@ const LoginPage = () => {
             type="password"
             className="form-control"
             id="formBasicPassword"
+            placeholder="min 6 caracteres"
+            autoComplete="off"
+            required
           />
         </div>
 
