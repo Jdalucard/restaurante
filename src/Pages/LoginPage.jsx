@@ -63,7 +63,7 @@ const LoginPage = () => {
             id="formBasicPassword"
             placeholder="Min 6 caracteres"
             autoComplete="off"
-            required
+           
           />
         </div>
 
