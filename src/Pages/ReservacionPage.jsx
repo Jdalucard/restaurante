@@ -1,41 +1,43 @@
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { db } from "../firebase/Firebase";
+import { doc, getDoc } from "firebase/firestore";
 
-import React,{useState,useEffect} from 'react'
+export const ReservacionPage = () => {
+  const [registro, setregistro] = useState({});
+  const { idRegistro } = useParams();
 
-const ReservacionPage = () => {
-  const [posts, setpost]=useState([])
-
-  useEffect(()=>{
-      const traerPost= async ()=>{
-        const resp = await fetch('https://jsonplaceholder.typicode.com/todos/');
-        const datos= await resp.json();
-
-        setpost(datos);
-      }
-      traerPost();
-  },[]) ;
+  useEffect(() => {
+    const ObtenerRegistro = async () => {
+      const resp = await getDoc(doc(db, "registros", idRegistro));
+      console.log(resp)
+      setregistro({
+        id: resp.id,
+        ...resp.data(),
+      });
+    };
+    ObtenerRegistro();
+  },[idRegistro]);
 
   return (
     <>
-    <header>
-      <h1>Reservaciones</h1>
-    </header>
 
-      <article>
-      <div>
-      <ul>
-       {posts.map((post)=>{
-        return(
-       <li key={post.id}></li>,
-       <li>{post.title}</li>
-        )
-       })}
-      </ul>
+<div className="container mt-5  text-center">
+      <header>
+        <h1>Pagina individual de los registros </h1>
+      </header>
+      <main>
+        <article>
+                    <p>{registro.nombre}</p>
+                    <p>{registro.apellido}</p>
+                    <p>{registro.email}</p>
+                    <p>{registro.telefono}</p>
+                    <p>{registro.fecha}</p>
+                    <p>{registro.number}</p>
+        </article>
+      </main>
       </div>
-
-      </article>
-
     </>
-  )
-}
-
-export default ReservacionPage
+  );
+};
+export default ReservacionPage;

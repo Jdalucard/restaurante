@@ -28,7 +28,7 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+             <li className="nav-item">
                 <NavLink
                   to="/"
                   aria-current="page"
@@ -38,7 +38,7 @@ const Navbar = () => {
                 >
                   HomePage
                 </NavLink>
-              </li>
+              </li> 
               <li className="nav-item">
                 <NavLink
                   to="Menulista"
@@ -62,16 +62,15 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  to="blog"
+                  to="login"
                   className={({ isActive }) =>
                     isActive ? "nav-link active" : "nav-link"
                   }
                 >
-                  Blog
+                  Login
                 </NavLink>
               </li>
-              
-
+            
             </ul>
             <span className="navbar-text">
               <h3>Un mundo de Sabores</h3>

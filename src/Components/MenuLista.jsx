@@ -30,6 +30,8 @@ export const MenuLista = () => {
         imagenes="Plato04"
         contenido="Está compuesto por huevos, ya sean fritos o revueltos, bacon y tortitas americanas. Como bebida, suele optarse por el café o zumos de frutas y en ocasiones, en  complementa con patatas frita"
       />
+        
+         
     </>
   );
 };

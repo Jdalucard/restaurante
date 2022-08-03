@@ -4,49 +4,37 @@ import {
   Route,
   Navigate,
   Routes,
- 
 } from "react-router-dom";
 
-import Homepage  from "../Pages/HomePage";
+import Homepage from "../Pages/HomePage";
 import ReservacionesPage from "../Pages/ReservacionesPage";
 import Navbar from "../Components/Nav";
-import BlogPage from "../Pages/BlogPage";
+
 import ReservacionPage from "../Pages/ReservacionPage";
-import  MenuLista  from "../Components/MenuLista";
+import MenuLista from "../Components/MenuLista";
+import LoginPage from "../Pages/LoginPage";
 
 export const AppRutas = () => {
   return (
-    
     <Router>
       <Navbar />
-      <div className="container-xl mt-3">
+    
         <Routes>
-       
-            <Route path="/" element={<Homepage  />} />
-            <Route path="/reservaciones" element={<ReservacionesPage />} />
-   
-          <Route
-              path="/reservacion/:idRegistro"
-              element={<ReservacionPage />}
-            />
-
-          <Route path="/Menulista" element={<MenuLista 
-        
-          />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/reservaciones" element={<ReservacionesPage />} />
 
           <Route
-            path="/blog"
-            element={
-              <BlogPage
-              articulos={['articulo1','articulo2','articulo3']}
-        
-              />
-            }
+            path="/reservacion/:idRegistro"
+            element={<ReservacionPage />}
           />
+
+          <Route path="/Menulista" element={<MenuLista />} />
+
+          <Route path="/login" element={<LoginPage />} />
 
           <Route path="*" element={<Navigate to="/Nofound" />} />
         </Routes>
-      </div>
+   
     </Router>
   );
 };
