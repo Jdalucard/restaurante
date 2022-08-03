@@ -24,10 +24,8 @@ const App = () => {
   return(
 <>
 
-<AppRouter
 
-/>
-{/* {usuarioGlobal ? <AppRouter/>: <LoginPage/>} */}
+{usuarioGlobal ? <AppRouter/>: <LoginPage/>} 
 
 
 

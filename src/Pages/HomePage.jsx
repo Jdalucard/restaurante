@@ -1,16 +1,11 @@
 import React from "react";
-import { app } from "../firebase/Firebase";
-import { getAuth, signOut } from "firebase/auth";
 import { NavLink } from "react-router-dom";
 
-const auth = getAuth(app);
+
 const Home = () => {
   return (
     <>
-      {/*   <h4>Hola, iniciastes sesion</h4>
-  
-  <button className="btn btn-primary btn-danger" onClick={()=>signOut(auth)}>Cerrar sesion </button>
- */}
+    
       <div>
         <div className="ImagenPrincipal container-fluid">
           <div className="Boton-Home">
