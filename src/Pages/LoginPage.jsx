@@ -29,11 +29,8 @@ const LoginPage = () => {
     } else {
       //si esta Iniciando seccion
       signInWithEmailAndPassword(auth, correo, contra);
-    };
-
-
+    }
   }
-
   return (
     <div className="container-sm mt-5  text-center">
       <form onSubmit={submiHandler}>
@@ -49,7 +46,7 @@ const LoginPage = () => {
             className="form-control"
             id="formBasicEmail"
             aria-describedby="emailHelp"
-            pattern=".+@[mM][aA][iI][lL][fF][oO][rR][aA][lL][lL][.][cC][oO]"
+            pattern=".@"
             placeholder="Correo"
           />
         </div>
@@ -63,7 +60,6 @@ const LoginPage = () => {
             id="formBasicPassword"
             placeholder="Min 6 caracteres"
             autoComplete="off"
-           
           />
         </div>
 
