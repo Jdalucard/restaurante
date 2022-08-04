@@ -46,7 +46,6 @@ const LoginPage = () => {
             className="form-control"
             id="formBasicEmail"
             aria-describedby="emailHelp"
-            pattern=".@"
             placeholder="Correo"
           />
         </div>
