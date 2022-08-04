@@ -9,7 +9,7 @@ import {
 import { app } from "../firebase/Firebase";
 
 const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider
+const googleProvider = new GoogleAuthProvider();
 
 const LoginPage = () => {
   const [estadoRegistrados, setRegistrados] = useState(false);
